@@ -14,5 +14,69 @@
         <FluentTheme />
 
         <StyleInclude Source="Assets/Icons.axaml" />
+
+
+        <Style Selector="Button.modern-button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background">
+                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
+                    <GradientStop Color="#667eea" Offset="0" />
+                    <GradientStop Color="#764ba2" Offset="1" />
+                </LinearGradientBrush>
+            </Setter>
+
+            <Style Selector="^:pointerover /template/ ContentPresenter">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background">
+                    <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
+                        <GradientStop Color="#764ba2" Offset="0" />
+                        <GradientStop Color="#667eea" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+        </Style>
+
+        <Style Selector="Border.card">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="BoxShadow" Value="0 15 30 0 #40000000" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="MaxWidth" Value="420" />
+            <Setter Property="Padding" Value="40" />
+        </Style>
+
+        <Style Selector="Border.user-circle">
+            <Setter Property="BoxShadow" Value="0 0 20 0 #40000000" />
+            <Setter Property="CornerRadius" Value="40" />
+            <Setter Property="Height" Value="80" />
+            <Setter Property="Width" Value="80" />
+        </Style>
+
+        <Style Selector="Border.error-message-bg">
+            <Setter Property="Background" Value="#fef2f2" />
+            <Setter Property="BorderBrush" Value="#fecaca" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="12" />
+        </Style>
+
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#2c3e50" />
+            <Setter Property="BorderBrush" Value="#e1e8ed" />
+            <Setter Property="Padding" Value="15 12" />
+
+            <Style Selector="^:pointerover">
+                <Setter Property="BorderBrush" Value="#667eea" />
+                <Setter Property="BorderThickness" Value="1" />
+            </Style>
+
+            <Style Selector="^:focus">
+                <Setter Property="BorderBrush" Value="#667eea" />
+                <Setter Property="BorderThickness" Value="1" />
+            </Style>
+        </Style>
+
+
+
     </Application.Styles>
 </Application>

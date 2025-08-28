@@ -14,27 +14,6 @@
         <vm:LoginViewModel />
     </Design.DataContext>
 
-    <UserControl.Styles>
-        <Style Selector="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background">
-                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
-                    <GradientStop Color="#667eea" Offset="0" />
-                    <GradientStop Color="#764ba2" Offset="1" />
-                </LinearGradientBrush>
-            </Setter>
-        </Style>
-
-        <Style Selector="Button:pointerover /template/ ContentPresenter">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background">
-                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
-                    <GradientStop Color="#764ba2" Offset="0" />
-                    <GradientStop Color="#667eea" Offset="1" />
-                </LinearGradientBrush>
-            </Setter>
-        </Style>
-    </UserControl.Styles>
 
     <!--  Beautiful gradient background  -->
     <Border>
@@ -47,26 +26,16 @@
 
         <!--  Main login card  -->
         <Border
-            Background="WhiteSmoke"
-            BoxShadow="0 15 30 0 #40000000"
-            CornerRadius="20"
+            Classes="card"
             HorizontalAlignment="Center"
             Margin="10"
-            MaxWidth="420"
-            Padding="40"
             VerticalAlignment="Center">
 
             <StackPanel Spacing="25">
                 <!--  Welcome section with icon  -->
                 <StackPanel HorizontalAlignment="Center" Spacing="10">
                     <!--  User icon circle  -->
-                    <Border
-                        BoxShadow="0 0 20 0 #40000000"
-                        CornerRadius="40"
-                        Height="80"
-                        HorizontalAlignment="Center"
-                        Margin="0,0,0,10"
-                        Width="80">
+                    <Border Classes="user-circle" Margin="0,0,0,10">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
                                 <GradientStop Color="#667eea" Offset="0" />
@@ -100,13 +69,7 @@
                         FontWeight="SemiBold"
                         Foreground="#2c3e50"
                         Text="Email Address" />
-                    <TextBox
-                        Background="Transparent"
-                        BorderBrush="#e1e8ed"
-                        Foreground="#2c3e50"
-                        Padding="15,12"
-                        Text="{Binding Email}"
-                        Watermark="Enter your email" />
+                    <TextBox Text="{Binding Email}" Watermark="Enter your email" />
                 </StackPanel>
 
                 <!--  Password field  -->
@@ -116,23 +79,13 @@
                         Foreground="#2c3e50"
                         Text="Password" />
                     <TextBox
-                        Background="Transparent"
-                        BorderBrush="#e1e8ed"
-                        Foreground="#2c3e50"
-                        Padding="15,12"
                         PasswordChar="•"
                         Text="{Binding Password}"
                         Watermark="Enter your password" />
                 </StackPanel>
 
                 <!--  Error message with icon  -->
-                <Border
-                    Background="#fef2f2"
-                    BorderBrush="#fecaca"
-                    BorderThickness="1"
-                    CornerRadius="8"
-                    IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                    Padding="12">
+                <Border Classes="error-message-bg" IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <TextBlock
                             FontSize="16"
@@ -149,6 +102,7 @@
 
                 <!--  Login button with gradient  -->
                 <Button
+                    Classes="modern-button"
                     Command="{Binding LoginCommand}"
                     Content="Sign In"
                     CornerRadius="12"
@@ -197,6 +151,7 @@
                     <Button
                         Background="Transparent"
                         BorderThickness="0"
+                        Classes="modern-button"
                         Command="{Binding NavigateToRegisterCommand}"
                         Content="Create Account"
                         Cursor="Hand"

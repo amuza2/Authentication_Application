@@ -14,28 +14,6 @@
         <vm:RegisterViewModel />
     </Design.DataContext>
 
-    <UserControl.Styles>
-        <Style Selector="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background">
-                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
-                    <GradientStop Color="#667eea" Offset="0" />
-                    <GradientStop Color="#764ba2" Offset="1" />
-                </LinearGradientBrush>
-            </Setter>
-        </Style>
-
-        <Style Selector="Button:pointerover /template/ ContentPresenter">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background">
-                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
-                    <GradientStop Color="#764ba2" Offset="0" />
-                    <GradientStop Color="#667eea" Offset="1" />
-                </LinearGradientBrush>
-            </Setter>
-        </Style>
-    </UserControl.Styles>
-
 
     <Border>
         <Border.Background>
@@ -46,22 +24,13 @@
         </Border.Background>
 
         <Border
-            Background="WhiteSmoke"
-            BoxShadow="0 15 30 0 #40000000"
-            CornerRadius="20"
+            Classes="card"
             Margin="10"
-            MaxWidth="420"
-            Padding="40"
             VerticalAlignment="Center">
 
-            <StackPanel Spacing="25">
+            <StackPanel HorizontalAlignment="Center" Spacing="25">
                 <!--  User icon circle  -->
-                <Border
-                    BoxShadow="0 0 20 0 #40000000"
-                    CornerRadius="40"
-                    Height="80"
-                    HorizontalAlignment="Center"
-                    Width="80">
+                <Border Classes="user-circle">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
                             <GradientStop Color="#667eea" Offset="0" />
@@ -159,13 +128,7 @@
                 </StackPanel>
 
                 <!--  Error message  -->
-                <Border
-                    Background="#fef2f2"
-                    BorderBrush="#fecaca"
-                    BorderThickness="1"
-                    CornerRadius="8"
-                    IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                    Padding="12">
+                <Border Classes="error-message-bg" IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <TextBlock
                             FontSize="16"
@@ -182,6 +145,7 @@
 
                 <!--  Register button  -->
                 <Button
+                    Classes="modern-button"
                     Command="{Binding RegisterCommand}"
                     Content="Register"
                     CornerRadius="12"
@@ -227,6 +191,7 @@
                     <Button
                         Background="Transparent"
                         BorderThickness="0"
+                        Classes="modern-button"
                         Command="{Binding NavigateToLoginCommand}"
                         Content="Login here"
                         Cursor="Hand"
