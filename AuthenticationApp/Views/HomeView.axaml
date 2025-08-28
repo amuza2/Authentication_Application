@@ -1,0 +1,30 @@
+<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="AuthenticationApp.Views.HomeView"
+    x:DataType="vm:HomeViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:AuthenticationApp.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Border Background="#f5f5f5">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock
+                FontSize="32"
+                FontWeight="Bold"
+                Text="Welcome!" />
+            <TextBlock
+                FontSize="15"
+                Margin="0,20"
+                Text="You have successfully logged in!" />
+        </StackPanel>
+    </Border>
+
+</UserControl>
