@@ -65,14 +65,14 @@
             <Setter Property="BorderBrush" Value="#e1e8ed" />
             <Setter Property="Padding" Value="15 12" />
 
-            <Style Selector="^:pointerover">
-                <Setter Property="BorderBrush" Value="#667eea" />
-                <Setter Property="BorderThickness" Value="1" />
+            <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+                <Setter Property="BorderBrush" Value="#764ba2" />
+                <Setter Property="BorderThickness" Value="2" />
             </Style>
 
-            <Style Selector="^:focus">
-                <Setter Property="BorderBrush" Value="#667eea" />
-                <Setter Property="BorderThickness" Value="1" />
+            <Style Selector="^:focus /template/ Border#PART_BorderElement">
+                <Setter Property="BorderBrush" Value="#764ba2" />
+                <Setter Property="BorderThickness" Value="2" />
             </Style>
         </Style>
 
